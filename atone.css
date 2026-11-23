@@ -1,0 +1,125 @@
+
+body {
+    background: linear-gradient(135deg, #160022, #52002f);
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+h1 {
+    color: pink;
+}
+
+.intro {
+    font-size: 18px;
+}
+
+.gift {
+    display: inline-block;
+    font-size: 110px;
+    cursor: pointer;
+    margin-top: 50px;
+    animation: shake 2s infinite;
+}
+
+.gift p {
+    font-size: 20px;
+}
+
+.gift:hover {
+    transform: scale(1.2);
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+.gift.opening {
+    animation: openGift 1s forwards;
+}
+
+@keyframes openGift {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5) rotate(15deg);
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+#message {
+    display: none;
+    margin: 40px auto;
+    max-width: 450px;
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px pink;
+}
+
+#message.show {
+    display: block;
+    animation: appear 1.5s ease;
+}
+
+#message h2 {
+    color: pink;
+}
+
+.final {
+    font-size: 19px;
+    line-height: 1.6;
+    color: white;
+    margin-top: 30px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    animation: floatUp 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
